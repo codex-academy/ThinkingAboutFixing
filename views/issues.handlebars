@@ -1,0 +1,29 @@
+<h1>Issues</h1>
+
+<a href="/issues/add">Add issue</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>
+                Heading
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#issues}}
+        <tr>
+            <td>
+                {{heading}}
+            </td>
+            <td>
+                <a href="/issues/{{id}}">Edit</a>
+                <a href="/issues/delete/{{id}}">Delete</a>
+            </td>
+        </tr>
+        {{/issues}}
+    </tbody>
+</table>

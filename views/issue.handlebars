@@ -1,0 +1,29 @@
+<h1>Add issue</h1>
+
+<form class="" action="/issues" method="post">
+<input type="hidden" name="id" value="{{issue.id}}">
+
+<div class="row">
+    <div class="six columns">
+        <label for="heading">Headingg</label>
+        <input type="text" name="heading" value = {{issue.heading}}>
+        <label for="description" >Description</label>
+        <textarea name="description" class="u-full-width" id="desc">{{issue.description}}</textarea>
+    </div>
+    <div class="six columns">
+        <div id="preview">
+
+        </div>
+    </div>
+</div>
+<input class="button-primary" type="submit" value="Submit">
+<script type="text/javascript">
+    var desc = document.getElementById('desc');
+    var preview = document.getElementById('preview');
+
+    desc.addEventListener('input', function(e){
+        preview.innerHTML = marked(desc.value);
+    });
+
+</script>
+</form>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+
+# Debugging Tips
+
+---
+.right-column[
+
+# Agenda
+
+* How to track down errors
+* Analyzing stack traces
+* Isolating an issue
+* Debugging tools
+]
+---
+.right-column[
+
+## How to track down errors:
+* Understanding the big picture
+* What areas in the application are error prone
+* What clues do we have?
+* How to read error messages
+]
+---
+.right-column[
+
+## Analyzing stack traces:
+* Which code is yours?
+* At which line is the error?
+* Why could things go wrong at that line?
+* Silent failure?
+]
+---
+## Stack trace:
+
+# What is a stacktrace?
+
+```javascript
+
+/Users/andre/Dropbox/projects/codex/DebuggingTips/node_modules/express/lib/router/route.js:196
+        throw new Error(msg);
+              ^
+Error: Route.get() requires callback functions but got a [object Undefined]
+    at Route.(anonymous function) [as get] (/Users/andre/Dropbox/projects/codex/DebuggingTips/node_modules/express/lib/router/route.js:196:15)
+    at EventEmitter.app.(anonymous function) (/Users/andre/Dropbox/projects/codex/DebuggingTips/node_modules/express/lib/application.js:481:19)
+    at Object.<anonymous> (/Users/andre/Dropbox/projects/codex/DebuggingTips/index.js:40:5)
+    at Module._compile (module.js:460:26)
+    at Object.Module._extensions..js (module.js:478:10)
+    at Module.load (module.js:355:32)
+    at Function.Module._load (module.js:310:12)
+    at Function.Module.runMain (module.js:501:10)
+    at startup (node.js:129:16)
+    at node.js:814:3
+
+
+```
+---
+.right-column[
+    ## Silent failure?
+]
+
+---
+
+.right-column[
+
+
+## Isolating an issue:
+* Remove code - check if it still fails
+* Put code back until the error happens again
+* Look at lines before & after the problem
+]
+
+---
+.right-column[
+
+## Debugging tools
+* break points
+    * Chrome developer tools
+    * VS Code
+    * Node Inspector
+]
+---
+.right-column[
+## Logging
+* print things to the console.
+* break problem down into components
+* use log files - with various log levels
+]
+
+    </textarea>
+    <script src="https://gnab.github.io/remark/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

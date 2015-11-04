@@ -1,0 +1,11 @@
+Errors
+======
+* remove a callback from the module
+* using an undefined route
+* using an undefined method on a route that exists
+* invalid database credentials
+* can not get post
+* redirect invalid
+* unexpected token - no comma where there should be one
+* edit the text area for the edit
+* uninstall module

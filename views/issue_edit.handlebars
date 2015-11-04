@@ -1,0 +1,28 @@
+<h1>Edit issue</h1>
+
+<script type="text/javascript">
+    var desc = document.getElementById('desc');
+    var preview = document.getElementById('preview');
+    preview.innerHTML = marked(desc.value);
+
+    desc.addEventListener('input', function(e){
+        preview.innerHTML = marked(desc.value);
+    });
+</script>
+
+<form class="" action="/issues/update/{{issue.id}}" method="post">
+    <input type="hidden" name="id" value="{{issue.id}}">
+    <div class="row">
+        <div class="six columns">
+            <label for="heading">Heading</label>
+            <input type="text" name="heading" value = {{issue.heading}}>
+            <label for="description">Description</label>
+            <textarea name="description" class="u-full-width" id= "desc">{{issue.description}}</textarea>
+        </div>
+        <div class="six columns">
+
+        </div>
+    </div>
+    <input class="button-primary" type="submit" value="Submit">
+
+</form>
