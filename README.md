@@ -1,6 +1,10 @@
-# Debugging Tips
+# Thinking about fixing
 
 A large part of a software developers job is to find problems. To find problems in existing applications and to minimize problems in applications.
+
+This project is a broken epress application that you should fix to help you to think about fixing error in your application. Because errors will be there for sure. How you interact and use them is crucial in your programming career.
+
+## Background
 
 In this session we will look at tips, tricks and techniques for tracking down problems in our applications.
 
